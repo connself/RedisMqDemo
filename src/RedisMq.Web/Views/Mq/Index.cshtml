@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-default mt-15">
+    <div class="panel-heading">调试</div>
+    <div class="panel-body">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="inputMessage">内容&nbsp;&nbsp;</label>
+                <input type="text" class="form-control" id="inputMessage" placeholder="消息内容" style="width:400px;">
+            </div>
+            <button type="button" class="btn btn-default" id="send">提交</button>
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">输出</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6 col-xs-6 col-lg-6"><ul class="list-group" id="res"></ul></div>
+            <div class="col-md-6 col-xs-6 col-lg-6"><ul class="list-group" id="handler"></ul></div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.signalR-2.4.1.min.js")
+    @Scripts.Render("~/signalr/hubs")
+    <script>
+        $(function () {
+            var connectionId = "";
+            var notification = $.connection.notificationHub;
+            notification.client.addNewMessageToPage = function (name, message) {
+
+                console.log(message);
+
+                // Add the message to the page.
+                $('#handler').append('<li class="list-group-item">' + name + ':<pre> ' + message + '</pre></li>');
+            };
+            $.connection.hub.start().done(function () {
+                console.log("服务连接完成");
+                connectionId = $.connection.hub.id;
+                console.log("ConnectionId __ " + connectionId);
+                //notification.server.send("服务器", "频道【mq】订阅客户端开始接收消息 ~~~");
+            });
+
+            $("#send").click(function () {
+                for (var i = 1; i < 101; i++) {
+                    var _data = {
+                        "Index": i,
+                        "Message": $("#inputMessage").val(),
+                        "ConnectionId": connectionId
+                    };
+                    $.ajax({
+                        url: "Mq/PublicMessage",
+                        type: "POST",//此参数在这必须要设置,否则服务端无法获取参数值
+                        async: false,
+                        data: _data,
+                        dataType: "json",
+                        success: function (data) {
+                            $("#res").append('<li class="list-group-item"><samp>当前队列数量：<var>' + data + "</var></samp></li>")
+                        },
+                        error: function () {
+                        }
+                    });
+                }
+            });
+        })
+    </script>
+}
+

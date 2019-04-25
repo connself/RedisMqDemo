@@ -1,0 +1,149 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.mt-5 {
+    margin-top: 5px
+}
+/*距上5像素*/
+.mt-10 {
+    margin-top: 10px
+}
+/*距上10像素*/
+.mt-15 {
+    margin-top: 15px
+}
+/*距上15像素*/
+.mt-20 {
+    margin-top: 20px
+}
+/*距上20像素*/
+.mt-25 {
+    margin-top: 25px
+}
+/*距上25像素*/
+.mt-30 {
+    margin-top: 30px
+}
+/*距上30像素*/
+.mt-35 {
+    margin-top: 35px
+}
+/*距上35像素*/
+.mt-40 {
+    margin-top: 40px
+}
+/*距上40像素*/
+.mt-50 {
+    margin-top: 50px
+}
+/*距上50像素*/
+
+.mb-5 {
+    margin-bottom: 5px
+}
+/*距下5像素*/
+.mb-10 {
+    margin-bottom: 10px
+}
+/*距下10像素*/
+.mb-15 {
+    margin-bottom: 15px
+}
+/*距下15像素*/
+.mb-20 {
+    margin-bottom: 20px
+}
+/*距下20像素*/
+.mb-25 {
+    margin-bottom: 25px
+}
+/*距下25像素*/
+.mb-30 {
+    margin-bottom: 30px
+}
+/*距下30像素*/
+.mb-35 {
+    margin-bottom: 35px
+}
+/*距下35像素*/
+.mb-40 {
+    margin-bottom: 40px
+}
+/*距下40像素*/
+.mb-50 {
+    margin-bottom: 50px
+}
+/*距下50像素*/
+
+.ml-5 {
+    margin-left: 5px
+}
+/*距左5像素*/
+.ml-10 {
+    margin-left: 10px
+}
+/*距左10像素*/
+.ml-15 {
+    margin-left: 15px
+}
+/*距左15像素*/
+.ml-20 {
+    margin-left: 20px
+}
+/*距左20像素*/
+.ml-30 {
+    margin-left: 30px
+}
+/*距左30像素*/
+.ml-40 {
+    margin-left: 40px
+}
+/*距左40像素*/
+.ml-50 {
+    margin-left: 50px
+}
+/*距左50像素*/
+
+.mr-5 {
+    margin-right: 5px
+}
+/*距右5像素*/
+.mr-10 {
+    margin-right: 10px
+}
+/*距右10像素*/
+.mr-15 {
+    margin-right: 15px
+}
+/*距右15像素*/
+.mr-20 {
+    margin-right: 20px
+}
+/*距右20像素*/
+.mr-30 {
+    margin-right: 30px
+}
+/*距右30像素*/
+.mr-40 {
+    margin-right: 40px
+}
+/*距右40像素*/
+.mr-50 {
+    margin-right: 50px
+}
+/*距右50像素*/
